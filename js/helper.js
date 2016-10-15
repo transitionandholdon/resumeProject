@@ -56,8 +56,7 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14740.45498886253!2d114.03096074999999!3d22.5374114!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f3e091915fe5%3A0xec91104192f892be!2sChegongmiao!5e0!3m2!1sen!2s!4v1476415286567" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>';
-
+var googleMap = '<div id="map"></div>';
 
 /*
 The Internationalize Names challenge found in the lesson Flow Control from JavaScript Basics requires you to create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
@@ -239,11 +238,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-// window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-// window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
- // map.fitBounds(mapBounds);
-// });
+map.fitBounds(mapBounds);
+});
