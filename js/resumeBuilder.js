@@ -76,9 +76,9 @@ var education = {
     { "name" : "HuNan University",
       "location" : "ChangSha",
       "degree" :　"Bachelor",
-      "majoys" : ["landscape","planning"],
+      "majors" : ["landscape","planning"],
       "dates" : "2004-2008",
-      "url" : "www.hunan.com"
+      "url" : "http://www.hunau.edu.cn/"
     }
   ],
   "onlineCourses" : [
@@ -99,6 +99,7 @@ var education = {
     $("#education").append(HTMLschoolStart);
     for (var i = 0; i < education.schools.length; i++){
     var formattedSchool = HTMLschoolName.replace("%data%", education.schools[i].name);
+    formattedSchool = formattedSchool.replace("#", education.schools[i].url);
     $(".education-entry:last").append(formattedSchool);
     var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
     $(".education-entry:last").append(formattedSchoolDegree);
@@ -106,13 +107,13 @@ var education = {
     $(".education-entry:last").append(formattedSchoolDates);
     var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
     $(".education-entry:last").append(formattedSchoolLocation);
-    for(var j = 0; j < education.schools[i].majoys.length; j++) {
-      var formattedMajoy = HTMLschoolMajor.replace("%data%", education.schools[i].majoys[j]);
-      $(".education-entry:last").append(formattedMajoy);
+    for(var j = 0; j < education.schools[i].majors.length; j++) {
+      var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
+      $(".education-entry:last").append(formattedMajor);
       }
     }
+    $(".education-entry:last").append(HTMLonlineClasses);
     for (var k = 0; k < education.onlineCourses.length; k++) {
-      $(".education-entry:last").append(HTMLonlineClasses);
       var formatteronlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[k].title);
       $(".education-entry:last").append(formatteronlineTitle);
       var formatteronlineSChool = HTMLonlineSchool.replace("%data%", education.onlineCourses[k].school);
@@ -151,7 +152,8 @@ bio.display = function(){
       $("#skills").append(formattedSkill);
     }
   }
-}
+};
+
 bio.display();
 
 work.display = function(){
@@ -179,7 +181,8 @@ work.display = function(){
 
 
   }
-}
+};
+
 work.display();
 
 projects.display = function(){
@@ -205,7 +208,8 @@ projects.display = function(){
       }
     }
   }
-}
+};
+
 projects.display();
 education.display();
 
